@@ -26,13 +26,30 @@ Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
  - backend: Sử dụng nodered để đọc dữ liệu từ các cảm biến (có thể dùng api online để lấy dữ liệu theo giời gian thực), 
    nodered sẽ lưu dữ liệu mới nhất (dạng update) vào cơ sở dữ liệu mariadb (sử dụng phpmyadmin để tạp table và quản trị lần đầu)
    nodered sẽ lưu dữ liệu (insert) vào influxdb để lưu giá trị lịch sử, để cho grafana dùng để hiển thị biểu đồ.
+   <img width="1914" height="1013" alt="image" src="https://github.com/user-attachments/assets/eba385aa-3aa1-4a2b-8806-c3c2566b06f6" />
+1: Chuẩn bị cơ sở dữ liệu MariaDB (cho login và dữ liệu cảm biến)
+   <img width="1915" height="861" alt="image" src="https://github.com/user-attachments/assets/b9d4d217-573c-41e4-bffe-6aa1f6100279" />
+2: Xây dựng backend trên Node-RED
+   <img width="1183" height="550" alt="image" src="https://github.com/user-attachments/assets/20d165ee-04da-48dc-b430-1bb348417a9b" />
+   API LẤY DỮ LIỆU MỚI NHẤT
+   <img width="1022" height="149" alt="image" src="https://github.com/user-attachments/assets/de7dad60-d9ef-497f-bc6c-f670616936a5" />
+3: Setup InfluxDB + Grafana
+<img width="1739" height="807" alt="image" src="https://github.com/user-attachments/assets/47e2435b-8c21-4f5f-8167-c6a993b5db7e" />
+
 5. Nginx làm web-server
- - Cấu hình nginx để chạy được website qua url http://fullname.com  (thay fullname bằng chuỗi ko dấu viết liền tên của bạn)
- - Cấu hình nginx để http://fullname.com/nodered truy cập vào nodered qua cổng 80, (dù nodered đang chạy ở port 1880)
- - Cấu hình nginx để http://fullname.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
+ - Cấu hình nginx để chạy được website qua url http://nguyetlinh.com  (thay fullname bằng chuỗi ko dấu viết liền tên của bạn)
+ - Cấu hình nginx để http://nguyetlinh.com/nodered truy cập vào nodered qua cổng 80, (dù nodered đang chạy ở port 1880)
+ - Cấu hình nginx để http://nguyetlinh.com/grafana truy cập vào grafana qua cổng 80, (dù grafana đang chạy ở port 3000)
+<img width="1879" height="901" alt="image" src="https://github.com/user-attachments/assets/0aa8642e-9682-4f79-b016-d88fee5b18b8" />
 
 Yêu cầu sinh viên lưu code trên github
 có file readme.md có hình ảnh + text: ghi lại nhật ký quá trình làm bài.
+
+ Trang web chính       [http://nguyetlinh.com](192.168.1.6 nguyetlinh.com)                 
+ phpMyAdmin            [http://localhost:8080](http://localhost:8080)                 
+ Node-RED (qua nginx)  [http://nguyetlinh.com/nodered](http://nguyetlinh.com/nodered) 
+ Grafana (qua nginx)   [http://nguyetlinh.com/grafana](http://nguyetlinh.com/grafana) 
+ InfluxDB setup        [http://localhost:8086](http://localhost:8086)                 
 
 CÁCH ĐÁNH GIÁ:
 1. Cài đặt được môi trường: 1đ

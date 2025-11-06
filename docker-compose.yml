@@ -1,0 +1,92 @@
+version: "3.9"
+
+services:
+  mariadb:
+    image: mariadb:latest
+    container_name: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: mydb
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./db_data:/var/lib/mysql
+    networks:
+      - iot-net
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mariadb
+      PMA_USER: root
+      PMA_PASSWORD: root
+    ports:
+      - "8080:80"
+    depends_on:
+      - mariadb
+    networks:
+      - iot-net
+
+  nodered:
+    image: nodered/node-red:latest
+    container_name: nodered
+    restart: always
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./nodered_data:/data
+    depends_on:
+      - mariadb
+    networks:
+      - iot-net
+
+  influxdb:
+    image: influxdb:latest
+    platform: linux/amd64   # Bắt buộc dòng này để tránh lỗi exec format error
+    container_name: influxdb
+    restart: always
+    ports:
+      - "8086:8086"
+    environment:
+      - INFLUXDB_INIT_MODE=setup
+      - INFLUXDB_INIT_USERNAME=admin
+      - INFLUXDB_INIT_PASSWORD=admin123
+      - INFLUXDB_INIT_ORG=myorg
+      - INFLUXDB_INIT_BUCKET=mydb
+    volumes:
+      - ./influx_data:/var/lib/influxdb2
+    networks:
+      - iot-net
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - influxdb
+    networks:
+      - iot-net
+
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: always
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./html:/usr/share/nginx/html
+      - ./nginx.conf:/etc/nginx/conf/nginx.conf
+    depends_on:
+      - phpmyadmin
+      - nodered
+    networks:
+      - iot-net
+
+networks:
+  iot-net:

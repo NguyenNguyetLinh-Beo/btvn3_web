@@ -8,6 +8,8 @@ Hạn nộp     : 2025-11-05 00:00
 Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
 1. Cài đặt môi trường linux: SV chọn 1 trong các phương án
  - enable wsl: cài đặt docker desktop
+   <img width="893" height="410" alt="image" src="https://github.com/user-attachments/assets/905cf1cf-3bdc-471d-a82e-649220b7e18c" />
+
 2. Cài đặt Docker (nếu dùng docker desktop trên windows thì nó có ngay)
 3. Sử dụng 1 file docker-compose.yml để cài đặt các docker container sau: 
    mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)

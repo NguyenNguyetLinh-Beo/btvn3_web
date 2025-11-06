@@ -11,6 +11,8 @@ Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
    <img width="893" height="410" alt="image" src="https://github.com/user-attachments/assets/905cf1cf-3bdc-471d-a82e-649220b7e18c" />
 
 2. Cài đặt Docker (nếu dùng docker desktop trên windows thì nó có ngay)
+<img width="1893" height="975" alt="Screenshot 2025-11-06 181638" src="https://github.com/user-attachments/assets/44ec983d-0449-42dc-b443-1fc28b17d760" />
+
 3. Sử dụng 1 file docker-compose.yml để cài đặt các docker container sau: 
    mariadb (3306), phpmyadmin (8080), nodered/node-red (1880), influxdb (8086), grafana/grafana (3000), nginx (80,443)
    <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e52fdd2d-fe96-4148-9510-e67aa8ea2b15" />

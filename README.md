@@ -45,11 +45,11 @@ Yêu cầu     : LẬP TRÌNH ỨNG DỤNG WEB trên nền linux
 Yêu cầu sinh viên lưu code trên github
 có file readme.md có hình ảnh + text: ghi lại nhật ký quá trình làm bài.
 
- Trang web chính       [http://nguyetlinh.com](192.168.1.6 nguyetlinh.com)                 
- phpMyAdmin            [http://localhost:8080](http://localhost:8080)                 
- Node-RED (qua nginx)  [http://nguyetlinh.com/nodered](http://nguyetlinh.com/nodered) 
- Grafana (qua nginx)   [http://nguyetlinh.com/grafana](http://nguyetlinh.com/grafana) 
- InfluxDB setup        [http://localhost:8086](http://localhost:8086)                 
+ Trang web chính       [http://nguyetlinh.com](http://192.168.1.6nguyetlinh.com)                 
+ phpMyAdmin            ###http://192.168.1.6 localhost:8080)                 
+ Node-RED (qua nginx)  [http://nguyetlinh.com/nodered](http://192.168.1.6nguyetlinh.com/nodered) 
+ Grafana (qua nginx)   [http://nguyetlinh.com/grafana](http://192.168.1.6nguyetlinh.com/grafana) 
+ InfluxDB setup        ###http://192.168.1.6 localhost:8086                 
 
 CÁCH ĐÁNH GIÁ:
 1. Cài đặt được môi trường: 1đ
